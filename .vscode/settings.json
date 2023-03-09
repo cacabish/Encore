@@ -4,5 +4,6 @@
     "prettier.singleQuote": true,
     "prettier.singleAttributePerLine": true,
     "prettier.withNodeModules": true,
-    "prettier.endOfLine": "crlf"
+    "prettier.endOfLine": "crlf",
+    "prettier.printWidth": 120
 }
