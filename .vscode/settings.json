@@ -1,0 +1,8 @@
+{
+    "editor.formatOnSave": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.singleQuote": true,
+    "prettier.singleAttributePerLine": true,
+    "prettier.withNodeModules": true,
+    "prettier.endOfLine": "crlf"
+}
