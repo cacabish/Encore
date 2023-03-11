@@ -1,5 +1,6 @@
 import { UPPER_PARTIAL, LOWER_PARTIAL, DECOMPRESSED_CENTRAL } from './musdata';
-import zlib from 'zlib';
+import { zlibSync } from 'fflate';
+import { Buffer } from 'buffer';
 import CRC32 from 'crc-32';
 
 function constructBody(
@@ -31,7 +32,7 @@ function constructBody(
     const crc32Hash = CRC32.buf(out);
     const crcBuffer = numberToBytes(crc32Hash);
 
-    const compressedPayload = zlib.deflateSync(Buffer.from(out));
+    const compressedPayload = zlibSync(Buffer.from(out), { level: 6 });
     const totalBlockLength = compressedPayload.length + 4 + 6;
     const lengthBuffer = numberToBytes(totalBlockLength);
 
